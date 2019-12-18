@@ -23,6 +23,10 @@
 		40D55FF023A9F042008A779F /* ShipmentOfferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FEF23A9F042008A779F /* ShipmentOfferManager.swift */; };
 		40D55FF223A9F156008A779F /* ShipmentOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D55FF123A9F156008A779F /* ShipmentOfferCell.xib */; };
 		40D55FF423A9F168008A779F /* ShipmentOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FF323A9F168008A779F /* ShipmentOfferCell.swift */; };
+		D689414223AA825A0027286B /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689414123AA825A0027286B /* SpinnerView.swift */; };
+		D689414423AA82800027286B /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689414323AA82800027286B /* UIView+Layout.swift */; };
+		D689414623AA8A380027286B /* SendAlertsConfirmationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D689414523AA8A380027286B /* SendAlertsConfirmationView.xib */; };
+		D689414823AA8DB30027286B /* SendAlertsConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689414723AA8DB30027286B /* SendAlertsConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		40D55FEF23A9F042008A779F /* ShipmentOfferManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentOfferManager.swift; sourceTree = "<group>"; };
 		40D55FF123A9F156008A779F /* ShipmentOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipmentOfferCell.xib; sourceTree = "<group>"; };
 		40D55FF323A9F168008A779F /* ShipmentOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentOfferCell.swift; sourceTree = "<group>"; };
+		D689414123AA825A0027286B /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		D689414323AA82800027286B /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		D689414523AA8A380027286B /* SendAlertsConfirmationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendAlertsConfirmationView.xib; sourceTree = "<group>"; };
+		D689414723AA8DB30027286B /* SendAlertsConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAlertsConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,14 +84,14 @@
 		4090431223A877D40020E8CC /* ConvoyTest */ = {
 			isa = PBXGroup;
 			children = (
-				40D55FDA23A87A28008A779F /* Supporting Files */,
-				40D55FD923A87A21008A779F /* Services */,
-				40D55FD823A87A1B008A779F /* Helpers */,
-				40D55FD723A87A12008A779F /* Controllers */,
-				40D55FD623A87A0C008A779F /* ViewModels */,
-				40D55FD523A87A07008A779F /* Views */,
-				40D55FD423A87A02008A779F /* Models */,
 				4090432623A879D50020E8CC /* App Delegate */,
+				40D55FD923A87A21008A779F /* Services */,
+				40D55FD423A87A02008A779F /* Models */,
+				40D55FD523A87A07008A779F /* Views */,
+				40D55FD623A87A0C008A779F /* ViewModels */,
+				40D55FD723A87A12008A779F /* Controllers */,
+				40D55FD823A87A1B008A779F /* Helpers */,
+				40D55FDA23A87A28008A779F /* Supporting Files */,
 			);
 			path = ConvoyTest;
 			sourceTree = "<group>";
@@ -109,6 +117,8 @@
 			children = (
 				40D55FF123A9F156008A779F /* ShipmentOfferCell.xib */,
 				40D55FF323A9F168008A779F /* ShipmentOfferCell.swift */,
+				D689414523AA8A380027286B /* SendAlertsConfirmationView.xib */,
+				D689414723AA8DB30027286B /* SendAlertsConfirmationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +148,8 @@
 				40D55FE723A9E087008A779F /* Double+Helper.swift */,
 				40D55FE923A9E475008A779F /* String+Helper.swift */,
 				40D55FEB23A9EB58008A779F /* Date+Utils.swift */,
+				D689414123AA825A0027286B /* SpinnerView.swift */,
+				D689414323AA82800027286B /* UIView+Layout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -219,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D689414623AA8A380027286B /* SendAlertsConfirmationView.xib in Resources */,
 				40D55FF223A9F156008A779F /* ShipmentOfferCell.xib in Resources */,
 				4090431E23A877D60020E8CC /* LaunchScreen.storyboard in Resources */,
 				4090431B23A877D60020E8CC /* Assets.xcassets in Resources */,
@@ -232,12 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D689414423AA82800027286B /* UIView+Layout.swift in Sources */,
 				40D55FDC23A87A75008A779F /* WebService.swift in Sources */,
+				D689414223AA825A0027286B /* SpinnerView.swift in Sources */,
 				40D55FE423A9DED9008A779F /* ShipmentOfferViewModel.swift in Sources */,
 				40D55FE623A9DFF6008A779F /* Int+Helper.swift in Sources */,
 				4090431423A877D40020E8CC /* AppDelegate.swift in Sources */,
 				40D55FE823A9E087008A779F /* Double+Helper.swift in Sources */,
 				40D55FEC23A9EB58008A779F /* Date+Utils.swift in Sources */,
+				D689414823AA8DB30027286B /* SendAlertsConfirmationView.swift in Sources */,
 				40D55FEA23A9E475008A779F /* String+Helper.swift in Sources */,
 				40D55FE023A9DE7F008A779F /* BaseListController.swift in Sources */,
 				40D55FEE23A9EFCB008A779F /* ShipmentOfferListViewModel.swift in Sources */,

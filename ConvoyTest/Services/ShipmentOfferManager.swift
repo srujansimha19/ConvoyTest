@@ -20,9 +20,15 @@ class ShipmentOfferManager {
             return
         }
         
+        SpinnerView.start()
+        
         let shipmentOffersResource = Resource<[ShipmentOfferViewModel]>(url: url)
         
         Webservice().load(resource: shipmentOffersResource) { (result) in
+            
+            DispatchQueue.main.async {
+                SpinnerView.stop()
+            }
             
             switch result {
             case .success(let data):

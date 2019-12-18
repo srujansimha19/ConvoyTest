@@ -9,7 +9,7 @@
 import UIKit
 
 struct ShipmentOfferViewModel: Codable {
-    private let shipmentOffer: ShipmentOffer?
+    private var shipmentOffer: ShipmentOffer?
 }
 
 extension ShipmentOfferViewModel {
@@ -23,6 +23,7 @@ extension ShipmentOfferViewModel {
 }
 
 extension ShipmentOfferViewModel {
+    
     var miles: String {
         if let miles = self.shipmentOffer?.miles {
             return miles.toMilesString
@@ -72,9 +73,9 @@ extension ShipmentOfferViewModel {
         }
         
         if let startTime = pickup.startTime {
-            time = startTime.toDateString(inFormat: "DDD MM/dd hh:mm a")
+            time = startTime.toDateString(inFormat: "E MM/dd hh:mm a")
         } else {
-            time = "n/a - "
+            time = "n/a"
         }
         
         if let endTime = pickup.endTime {
@@ -82,9 +83,9 @@ extension ShipmentOfferViewModel {
             let endDate = endTime.toDate()
             
             if startDate === endDate {
-                time += endTime.toDateString(inFormat: "hh:mm a")
+                time += (" - " + endTime.toDateString(inFormat: "hh:mm a"))
             } else {
-                time += endTime.toDateString(inFormat: "DDD MM/dd hh:mm a")
+                time += (" - " + endTime.toDateString(inFormat: "E MM/dd hh:mm a"))
             }
         } else {
             time += "n/a"
@@ -100,9 +101,9 @@ extension ShipmentOfferViewModel {
         }
         
         if let startTime = dropoff.startTime {
-            time = startTime.toDateString(inFormat: "DDD MM/dd hh:mm a")
+            time = startTime.toDateString(inFormat: "E MM/dd hh:mm a")
         } else {
-            time = "n/a - "
+            time = "n/a"
         }
         
         if let endTime = dropoff.endTime {
@@ -110,9 +111,9 @@ extension ShipmentOfferViewModel {
             let endDate = endTime.toDate()
             
             if startDate === endDate {
-                time += endTime.toDateString(inFormat: "hh:mm a")
+                time += (" - " + endTime.toDateString(inFormat: "hh:mm a"))
             } else {
-                time += endTime.toDateString(inFormat: "DDD MM/dd hh:mm a")
+                time += (" - " + endTime.toDateString(inFormat: "E MM/dd hh:mm a"))
             }
         } else {
             time += "n/a"
