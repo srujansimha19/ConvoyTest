@@ -24,7 +24,13 @@ final class Webservice {
     
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> ()) {
         
+        SpinnerView.start()
+        
         URLSession.shared.dataTask(with: resource.url) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+                SpinnerView.stop()
+            }
             
             guard let data = data, error == nil else {
                 completion(.failure(.domainError))

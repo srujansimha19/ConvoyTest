@@ -10,6 +10,10 @@
 		4090431423A877D40020E8CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4090431323A877D40020E8CC /* AppDelegate.swift */; };
 		4090431B23A877D60020E8CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4090431A23A877D60020E8CC /* Assets.xcassets */; };
 		4090431E23A877D60020E8CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4090431C23A877D60020E8CC /* LaunchScreen.storyboard */; };
+		409E690F23AAFD1300B74D7B /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E690E23AAFD1300B74D7B /* UIColor+Helper.swift */; };
+		409E691123AAFE3800B74D7B /* SortBy+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E691023AAFE3800B74D7B /* SortBy+Enum.swift */; };
+		409E691323AB223B00B74D7B /* SendAlertsSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */; };
+		409E691523AB224900B74D7B /* SendAlertsSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */; };
 		40D55FDC23A87A75008A779F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDB23A87A75008A779F /* WebService.swift */; };
 		40D55FDE23A87AE0008A779F /* ShipmentOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDD23A87AE0008A779F /* ShipmentOffer.swift */; };
 		40D55FE023A9DE7F008A779F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDF23A9DE7F008A779F /* BaseListController.swift */; };
@@ -35,6 +39,10 @@
 		4090431A23A877D60020E8CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4090431D23A877D60020E8CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4090431F23A877D60020E8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409E690E23AAFD1300B74D7B /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
+		409E691023AAFE3800B74D7B /* SortBy+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortBy+Enum.swift"; sourceTree = "<group>"; };
+		409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendAlertsSuccessView.xib; sourceTree = "<group>"; };
+		409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAlertsSuccessView.swift; sourceTree = "<group>"; };
 		40D55FDB23A87A75008A779F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		40D55FDD23A87AE0008A779F /* ShipmentOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentOffer.swift; sourceTree = "<group>"; };
 		40D55FDF23A9DE7F008A779F /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 				40D55FF323A9F168008A779F /* ShipmentOfferCell.swift */,
 				D689414523AA8A380027286B /* SendAlertsConfirmationView.xib */,
 				D689414723AA8DB30027286B /* SendAlertsConfirmationView.swift */,
+				409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */,
+				409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 				40D55FEB23A9EB58008A779F /* Date+Utils.swift */,
 				D689414123AA825A0027286B /* SpinnerView.swift */,
 				D689414323AA82800027286B /* UIView+Layout.swift */,
+				409E690E23AAFD1300B74D7B /* UIColor+Helper.swift */,
+				409E691023AAFE3800B74D7B /* SortBy+Enum.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409E691323AB223B00B74D7B /* SendAlertsSuccessView.xib in Resources */,
 				D689414623AA8A380027286B /* SendAlertsConfirmationView.xib in Resources */,
 				40D55FF223A9F156008A779F /* ShipmentOfferCell.xib in Resources */,
 				4090431E23A877D60020E8CC /* LaunchScreen.storyboard in Resources */,
@@ -250,6 +263,7 @@
 				D689414223AA825A0027286B /* SpinnerView.swift in Sources */,
 				40D55FE423A9DED9008A779F /* ShipmentOfferViewModel.swift in Sources */,
 				40D55FE623A9DFF6008A779F /* Int+Helper.swift in Sources */,
+				409E691123AAFE3800B74D7B /* SortBy+Enum.swift in Sources */,
 				4090431423A877D40020E8CC /* AppDelegate.swift in Sources */,
 				40D55FE823A9E087008A779F /* Double+Helper.swift in Sources */,
 				40D55FEC23A9EB58008A779F /* Date+Utils.swift in Sources */,
@@ -257,10 +271,12 @@
 				40D55FEA23A9E475008A779F /* String+Helper.swift in Sources */,
 				40D55FE023A9DE7F008A779F /* BaseListController.swift in Sources */,
 				40D55FEE23A9EFCB008A779F /* ShipmentOfferListViewModel.swift in Sources */,
+				409E691523AB224900B74D7B /* SendAlertsSuccessView.swift in Sources */,
 				40D55FDE23A87AE0008A779F /* ShipmentOffer.swift in Sources */,
 				40D55FF023A9F042008A779F /* ShipmentOfferManager.swift in Sources */,
 				40D55FF423A9F168008A779F /* ShipmentOfferCell.swift in Sources */,
 				40D55FE223A9DEA2008A779F /* ShipmentOffersController.swift in Sources */,
+				409E690F23AAFD1300B74D7B /* UIColor+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,7 @@ class ShipmentOfferCell: UITableViewCell {
             setStatus()
         }
     }
+    
     var vm: ShipmentOfferViewModel? = nil {
         didSet {
             setDetails(vm: vm)
@@ -52,7 +53,7 @@ class ShipmentOfferCell: UITableViewCell {
             return
         }
         
-        milesLabel.text = vm.miles
+        milesLabel.text = vm.milesText
         offerAmountLabel.text = vm.offerAmount
         
         originCityLabel.text = vm.originCity

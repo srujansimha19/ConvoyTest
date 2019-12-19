@@ -10,10 +10,9 @@ import UIKit
 
 class BaseListController: UITableViewController {
     
-    init(title: String) {
+    init() {
         super.init(style: .plain)
-        navigationItem.title = title
-        
+
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white

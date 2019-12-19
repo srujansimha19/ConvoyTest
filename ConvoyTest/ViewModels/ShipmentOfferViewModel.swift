@@ -24,7 +24,11 @@ extension ShipmentOfferViewModel {
 
 extension ShipmentOfferViewModel {
     
-    var miles: String {
+    var miles: Int? {
+        return self.shipmentOffer?.miles
+    }
+    
+    var milesText: String {
         if let miles = self.shipmentOffer?.miles {
             return miles.toMilesString
         }
@@ -32,6 +36,9 @@ extension ShipmentOfferViewModel {
         return "n/a"
     }
     
+    var price: Double? {
+        return self.shipmentOffer?.offer
+    }
     var offerAmount: String {
         if let offer = self.shipmentOffer?.offer?.toCurrency() {
             return offer
@@ -64,6 +71,22 @@ extension ShipmentOfferViewModel {
         }
         
         return cityString
+    }
+    
+    var pickupDate: Date? {
+        guard let pickupStartTime = shipmentOffer?.origin?.pickup?.startTime else {
+            return nil
+        }
+        
+        return Date().getDate(fromString: pickupStartTime)
+    }
+    
+    var dropoffDate: Date? {
+        guard let dropoffStartTime = shipmentOffer?.origin?.dropoff?.startTime else {
+            return nil
+        }
+        
+        return Date().getDate(fromString: dropoffStartTime)
     }
     
     var pickupTime: String {
