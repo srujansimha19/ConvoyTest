@@ -11,11 +11,11 @@ import UIKit
 class BaseListController: UITableViewController {
     
     init() {
-        super.init(style: .plain)
+        super.init(style: .grouped)
 
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         
         configureView()
     }
@@ -29,7 +29,7 @@ class BaseListController: UITableViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
 }
 

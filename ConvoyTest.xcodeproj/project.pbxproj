@@ -14,6 +14,8 @@
 		409E691123AAFE3800B74D7B /* SortBy+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E691023AAFE3800B74D7B /* SortBy+Enum.swift */; };
 		409E691323AB223B00B74D7B /* SendAlertsSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */; };
 		409E691523AB224900B74D7B /* SendAlertsSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */; };
+		409E691723AC47DB00B74D7B /* SortView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409E691623AC47DB00B74D7B /* SortView.xib */; };
+		409E691923AC485900B74D7B /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E691823AC485900B74D7B /* SortView.swift */; };
 		40D55FDC23A87A75008A779F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDB23A87A75008A779F /* WebService.swift */; };
 		40D55FDE23A87AE0008A779F /* ShipmentOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDD23A87AE0008A779F /* ShipmentOffer.swift */; };
 		40D55FE023A9DE7F008A779F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D55FDF23A9DE7F008A779F /* BaseListController.swift */; };
@@ -43,6 +45,8 @@
 		409E691023AAFE3800B74D7B /* SortBy+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortBy+Enum.swift"; sourceTree = "<group>"; };
 		409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendAlertsSuccessView.xib; sourceTree = "<group>"; };
 		409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAlertsSuccessView.swift; sourceTree = "<group>"; };
+		409E691623AC47DB00B74D7B /* SortView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortView.xib; sourceTree = "<group>"; };
+		409E691823AC485900B74D7B /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
 		40D55FDB23A87A75008A779F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		40D55FDD23A87AE0008A779F /* ShipmentOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentOffer.swift; sourceTree = "<group>"; };
 		40D55FDF23A9DE7F008A779F /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				D689414723AA8DB30027286B /* SendAlertsConfirmationView.swift */,
 				409E691223AB223B00B74D7B /* SendAlertsSuccessView.xib */,
 				409E691423AB224900B74D7B /* SendAlertsSuccessView.swift */,
+				409E691623AC47DB00B74D7B /* SortView.xib */,
+				409E691823AC485900B74D7B /* SortView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409E691723AC47DB00B74D7B /* SortView.xib in Resources */,
 				409E691323AB223B00B74D7B /* SendAlertsSuccessView.xib in Resources */,
 				D689414623AA8A380027286B /* SendAlertsConfirmationView.xib in Resources */,
 				40D55FF223A9F156008A779F /* ShipmentOfferCell.xib in Resources */,
@@ -262,6 +269,7 @@
 				40D55FDC23A87A75008A779F /* WebService.swift in Sources */,
 				D689414223AA825A0027286B /* SpinnerView.swift in Sources */,
 				40D55FE423A9DED9008A779F /* ShipmentOfferViewModel.swift in Sources */,
+				409E691923AC485900B74D7B /* SortView.swift in Sources */,
 				40D55FE623A9DFF6008A779F /* Int+Helper.swift in Sources */,
 				409E691123AAFE3800B74D7B /* SortBy+Enum.swift in Sources */,
 				4090431423A877D40020E8CC /* AppDelegate.swift in Sources */,

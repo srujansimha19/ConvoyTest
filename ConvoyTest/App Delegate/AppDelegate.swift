@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController(rootViewController: ShipmentOffersController())
-        navController.navigationBar.prefersLargeTitles = true
+        navController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         

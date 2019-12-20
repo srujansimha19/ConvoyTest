@@ -12,7 +12,7 @@ class ShipmentOffersController: BaseListController {
     
     fileprivate let cellId = "ShipmentOfferDetails"
     
-    var sortByBarButton = UIButton(type: .custom)
+    var sortView: SortView?
     var sendAlertsConfirmationView: SendAlertsConfirmationView?
     var requestedIndex: Int? {
         didSet {
@@ -28,12 +28,10 @@ class ShipmentOffersController: BaseListController {
     
     //MARK: - Fetch data and configure view
     override func configureView() {
-        
-        tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView.register(ShipmentOfferCell.self, forCellReuseIdentifier: cellId)
         tableView.register(UINib(nibName: "ShipmentOfferCell", bundle: Bundle.main), forCellReuseIdentifier: cellId)
         
-        configureSortBarButton(with: .pickupDate)
+        configureSortView(with: .pickupDate)
         
         ShipmentOfferManager().getOffers() { [weak self] (vm, error) in
             guard let strongSelf = self else {
@@ -48,43 +46,15 @@ class ShipmentOffersController: BaseListController {
         }
     }
     
-    // Sort methods
-    @objc private func didClickSortBy() {
-        let options = OffersSortByOptions.all
-        let alertController = UIAlertController(title: "Sort By", message: "Select an option to sort offers", preferredStyle: .actionSheet)
-        
-        for option in options {
-            alertController.addAction(UIAlertAction(title: option, style: .default, handler: { (action) in
-                if let title = action.title {
-                    DispatchQueue.main.async {
-                        let option = OffersSortByOptions.getOption(forValue: title)
-                        self.configureSortBarButton(with: option)
-                        self.vm.sortBy = option
-                        self.tableView.reloadData()
-                    }
-                }
-            }))
+    // Sort view
+    private func configureSortView(with option: OffersSortByOptions = .pickupDate) {
+        let views = UINib(nibName: "SortView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil)
+        if !views.isEmpty, let sortView = views.first as? SortView {
+            sortView.delegate = self
+            sortView.sortOption = .pickupDate
+            sortView.matchedCount = 3
+            self.sortView = sortView
         }
-        
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    private func configureSortBarButton(with option: OffersSortByOptions = .pickupDate) {
-        let attrTitle = getSortAttributedTitle(for: option)
-        sortByBarButton.setAttributedTitle(attrTitle, for: .normal)
-        sortByBarButton.layer.borderColor = UIColor.convoyGray.cgColor
-        sortByBarButton.layer.borderWidth = 1
-        sortByBarButton.layer.cornerRadius = 4
-        sortByBarButton.addTarget(self, action: #selector(didClickSortBy), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sortByBarButton)
-    }
-    
-    private func getSortAttributedTitle(for option: OffersSortByOptions) -> NSAttributedString {
-        let attrTitle = NSMutableAttributedString(string: "  Sort by", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.convoyGray])
-        attrTitle.append(NSAttributedString(string: ": " + option.value + "  ", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.convoyGray]))
-        
-        return attrTitle
     }
     
     // Request confirmation methods
@@ -114,6 +84,14 @@ extension ShipmentOffersController {
         return vm.offers.count
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return sortView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 124
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ShipmentOfferCell else {
             return UITableViewCell()
@@ -135,7 +113,7 @@ extension ShipmentOffersController {
     }
 }
 
-
+// MARK:- Send alerts confirmation delegate methods
 extension ShipmentOffersController: SendAlertsConfirmationDelegate {
     func sendAlerts() {
         if let window = UIApplication.shared.keyWindow {
@@ -152,5 +130,30 @@ extension ShipmentOffersController: SendAlertsConfirmationDelegate {
     
     func doNotSendAlerts() {
         requestedIndex = nil
+    }
+}
+
+// MARK:- Sort view delegate methods
+extension ShipmentOffersController: SortViewDelegate {
+    func sortButtonTapped() {
+        let options = OffersSortByOptions.all
+        let alertController = UIAlertController(title: "Sort By", message: "Select an option to sort offers", preferredStyle: .actionSheet)
+        
+        for option in options {
+            alertController.addAction(UIAlertAction(title: option, style: .default, handler: { (action) in
+                if let title = action.title {
+                    DispatchQueue.main.async {
+                        self.requestedIndex = nil
+                        let option = OffersSortByOptions.getOption(forValue: title)
+                        self.sortView?.sortOption = option
+                        self.vm.sortBy = option
+                        self.tableView.reloadData()
+                    }
+                }
+            }))
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
